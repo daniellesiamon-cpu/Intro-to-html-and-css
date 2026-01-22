@@ -1,13 +1,27 @@
 <!DOCTYPE html>
+<!-- DOCTYPE tells the browser this is a modern HTML5 document -->
 <html lang="en">
+<!-- 'lang="en"' helps screen readers and search engines know the page language -->
+
 <head>
+    <!-- The <head> holds invisible settings — not shown on the page itself -->
+
+    <!-- UTF-8 supports characters from almost every language -->
     <meta charset="UTF-8">
+
+    <!-- Makes the layout work correctly on mobile screens -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>About Us - MS Restaurant</title>
+
+    <!-- Loads the shared stylesheet — both pages use the same styles.css -->
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <!-- Navigation Bar -->
+
+    <!-- ==================== Navigation Bar ==================== -->
+    <!-- <nav> signals to the browser that this block contains site navigation links -->
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -15,35 +29,64 @@
         </ul>
     </nav>
 
-    <!-- About Section -->
+    <!-- ==================== Page Header ==================== -->
+    <!-- <header> typically contains the main title/intro of a page or section -->
     <header>
+        <!-- Only one <h1> per page — it's the main topic of this page -->
         <h1>About MS Restaurant</h1>
         <p>At MS Restaurant, we bring you a world of flavors, comfort, and excellent service.</p>
     </header>
 
-    <!-- Reservation Form -->
-    <section class="contact">
-        <h2>Reserve a Table</h2>
-        <form action="#">
+    <!-- ==================== Contact / Reservation Form ==================== -->
+    <!-- <section> groups a meaningful chunk of content; the class ties it to CSS -->
+    <section class="form-section">
+        <h2>HTML Form Example</h2>
+
+        <!-- <form> collects user input and sends it somewhere:
+             'action' = where the data is sent (submit.php on the server)
+             'method="POST"' = how it's sent (POST hides data in the request body,
+             unlike GET which shows it in the URL) -->
+        <form action="submit.php" method="POST">
+
+            <!-- 'for="name"' links this label to the input with id="name"
+                 Clicking the label will focus the input — good for accessibility -->
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+            <!-- type="text" → plain text field
+                 'placeholder' = hint text shown before the user types
+                 'required' = the form won't submit if this field is empty -->
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <!-- type="email" validates the input is a proper email address (e.g. has @) -->
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
-            <label for="date">Reservation Date:</label>
-            <input type="date" id="date" name="date" required>
+            <label for="age">Age:</label>
+            <!-- type="number" shows a numeric keyboard on mobile and allows only numbers -->
+            <input type="number" id="age" name="age" placeholder="Enter your age">
 
-            <label for="message">Special Requests:</label>
-            <textarea id="message" name="message" rows="4"></textarea>
+            <label for="gender">Gender:</label>
+            <!-- <select> creates a dropdown menu; each <option> is one choice -->
+            <select id="gender" name="gender">
+                <!-- 'value' is what gets sent to the server; the text between the tags is what the user sees -->
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
 
-            <button type="submit">Submit</button>
+            <label for="comments">Comments:</label>
+            <!-- <textarea> is a multi-line text box; 'rows' sets its initial height -->
+            <textarea id="comments" name="comments" rows="4" placeholder="Enter your comments"></textarea>
+
+            <!-- type="submit" creates the submit button; 'value' sets the button label text -->
+            <input type="submit" value="Submit">
         </form>
     </section>
 
-    <!-- Footer -->
+    <!-- ==================== Footer ==================== -->
     <footer>
+        <!-- &copy; is an HTML entity that renders as the © copyright symbol -->
         <p>&copy; 2024 MS Restaurant. All Rights Reserved.</p>
     </footer>
+
 </body>
 </html>

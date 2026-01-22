@@ -1,27 +1,49 @@
 <!DOCTYPE html>
+<!-- DOCTYPE tells the browser this is a modern HTML5 document -->
 <html lang="en">
+<!-- 'lang="en"' helps screen readers and search engines know the page is in English -->
+
 <head>
+    <!-- The <head> is not visible on the page — it holds settings and metadata -->
+
+    <!-- charset tells the browser how to read the characters (UTF-8 supports almost every language) -->
     <meta charset="UTF-8">
+
+    <!-- Makes the page responsive on mobile devices:
+         'width=device-width' matches the screen width,
+         'initial-scale=1.0' prevents zooming in/out on load -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- The tab/window title shown in the browser -->
     <title>MS Restaurant</title>
+
+    <!-- Links our external CSS file so these styles apply to this page -->
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <!-- Navigation Bar -->
+    <!-- Everything inside <body> is what the user actually sees on the page -->
+
+    <!-- ==================== Navigation Bar ==================== -->
+    <!-- <nav> is a semantic element that tells the browser "this is a navigation menu" -->
     <nav>
+        <!-- <ul> = unordered list; each <li> = list item; <a> = a clickable link -->
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
         </ul>
     </nav>
 
-    <!-- Hero Image -->
+    <!-- ==================== Hero Image ==================== -->
+    <!-- <section> groups related content; the class lets CSS target it with .hero -->
     <section class="hero">
+        <!-- 'alt' text describes the image for screen readers and when the image fails to load -->
         <img src="images/home.jpg" alt="Restaurant Image">
     </section>
 
-    <!-- About Section -->
+    <!-- ==================== About / Welcome Section ==================== -->
     <section class="about">
+        <!-- There should only be ONE <h1> per page — it's the main heading -->
         <h1>Welcome to MS Restaurant</h1>
         <p>
             MS Restaurant is an all-you-can-eat buffet dining is an all-inclusive delight.
@@ -32,64 +54,79 @@
         </p>
     </section>
 
-    <!-- Menu Section -->
+    <!-- ==================== Menu Section ==================== -->
     <section class="menu">
+        <!-- <h2> is the second-level heading, used for sub-sections under the <h1> -->
         <h2>Our Menu</h2>
+
+        <!-- .menu-items is a flex container (see CSS) that holds all the cards -->
         <div class="menu-items">
+
+            <!-- Each .menu-item is one card. <div> is a generic container with no special meaning -->
             <div class="menu-item">
+                <!-- src="..." is the image URL; alt="..." is the fallback description -->
                 <img src="https://via.placeholder.com/150" alt="Ugali">
                 <h3>Ugali</h3>
                 <p>A staple dish made from maize flour, served with sukuma wiki or nyama choma.</p>
             </div>
+
             <div class="menu-item">
                 <img src="https://via.placeholder.com/150" alt="Nyama Choma">
                 <h3>Nyama Choma</h3>
                 <p>Grilled meat, often goat or beef, enjoyed with kachumbari and ugali.</p>
             </div>
+
             <div class="menu-item">
                 <img src="https://via.placeholder.com/150" alt="Sukuma Wiki">
                 <h3>Sukuma Wiki</h3>
                 <p>Delicious sautéed collard greens cooked with onions and tomatoes.</p>
             </div>
+
             <div class="menu-item">
                 <img src="https://via.placeholder.com/150" alt="Githeri">
                 <h3>Githeri</h3>
                 <p>A hearty mix of boiled maize and beans, seasoned with spices.</p>
             </div>
+
             <div class="menu-item">
                 <img src="https://via.placeholder.com/150" alt="Mutura">
                 <h3>Mutura</h3>
                 <p>Kenyan sausage filled with meat and blood, grilled to perfection.</p>
             </div>
+
             <div class="menu-item">
                 <img src="https://via.placeholder.com/150" alt="Chapati">
                 <h3>Chapati</h3>
                 <p>Soft, flaky flatbread that pairs perfectly with stews and curries.</p>
             </div>
+
             <div class="menu-item">
                 <img src="https://via.placeholder.com/150" alt="Matoke">
                 <h3>Matoke</h3>
                 <p>Stewed plantains cooked with onions, tomatoes, and spices.</p>
             </div>
+
             <div class="menu-item">
                 <img src="https://via.placeholder.com/150" alt="Pilau">
                 <h3>Pilau</h3>
                 <p>Fragrant spiced rice cooked with beef or chicken, a Swahili delicacy.</p>
             </div>
+
             <div class="menu-item">
                 <img src="https://via.placeholder.com/150" alt="Mandazi">
                 <h3>Mandazi</h3>
-                <p>Sweet, fried dough that’s perfect for a quick snack or dessert.</p>
+                <p>Sweet, fried dough that's perfect for a quick snack or dessert.</p>
             </div>
+
             <div class="menu-item">
                 <img src="https://via.placeholder.com/150" alt="Kachumbari">
                 <h3>Kachumbari</h3>
                 <p>A fresh salad of tomatoes, onions, and cilantro with a tangy lemon dressing.</p>
-            </div>            
+            </div>
         </div>
     </section>
 
-    <!-- Opening Hours Section -->
+    <!-- ==================== Opening Hours Section ==================== -->
     <section class="hours">
         <h2>Opening Hours</h2>
         <p>Monday - Friday: 8:00 AM - 10:00 PM</p>
@@ -97,10 +134,13 @@
         <p>Sunday: 9:00 AM - 9:00 PM</p>
     </section>
 
-    <!-- Footer -->
+    <!-- ==================== Footer ==================== -->
+    <!-- <footer> is a semantic element for the bottom of the page -->
     <footer>
+        <!-- &copy; is an HTML entity — it renders as the © copyright symbol -->
         <p>&copy; 2024 MS Restaurant. All Rights Reserved.</p>
         <p>Follow us on:
+            <!-- href="#" is a placeholder link that goes nowhere — used during development -->
             <a href="#">Facebook</a> | 
             <a href="#">Instagram</a> | 
             <a href="#">Twitter</a>
